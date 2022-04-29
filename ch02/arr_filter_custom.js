@@ -14,11 +14,11 @@ var arr = {
     },
     'filter': function (cb) {
         var newArr = [];
-        // for (var i = 0; i < this.length; i++){
-        //     if(cb(this[i])){
-        //         newArr.push(this[i]);
-        //     }
-        // }
+        for (var i = 0; i < this.length; i++){
+            if(cb(this[i])){
+                newArr.push(this[i]);
+            }
+        }
         console.log(cb(this.fi));
         return newArr;
     }
