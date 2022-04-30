@@ -24,3 +24,54 @@ const postIncrement = counter++;
 // postIncrement = counter;
 // counter = counter + 1;
 console.log(`postIncrement : ${postIncrement}, counter : ${counter}`);
+
+// 4.Assignment operators
+let x = 3;
+let y = 6;
+
+x += y; // x = x + y;
+x -= y;
+x *= y;
+x /= y;
+
+// 5. Comparison operators
+console.log(10 < 6); //less than
+console.log(10 <= 6); //less than or equal
+console.log(10 > 6); //greater than
+console.log(10 >= 6); //greater than or equal
+
+// 6. Logical operators: || (or), && (and), ! (not)
+const value1 = true;
+const value2 = 4 < 2;
+
+// || (or), finds the first truthy value
+console.log(`or: ${value1 || value2 || check()}`);
+
+// && (and), finds the first falsy value
+console.log(`and: ${value1 && value2 && check()}`);
+
+// often used to compress long if-statement
+// nullableObject && nullableObject.something
+
+function check() {
+    for (let i = 0; i < 10; i++) {
+        //wasting time
+        console.log('😱');
+    }
+    return true;
+}
+
+// ! (not)
+console.log(!value1);
+
+// 7. Equality
+const stringFive = '5';
+const numberFive = 5;
+
+// == loose equality, with type conversion
+console.log(stringFive == numberFive);
+console.log(stringFive != numberFive);
+
+// === strict equality, no type conversion
+console.log(stringFive === numberFive);
+console.log(stringFive !== numberFive);
