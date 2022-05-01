@@ -149,7 +149,7 @@ function calculate(command, a, b) {
     switch (command) {
         case 'add':
             return a + b;
-        case 'subtract':
+        case 'substract':
             return a - b;
         case 'divide':
             return a / b;

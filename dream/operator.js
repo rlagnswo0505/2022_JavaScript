@@ -8,7 +8,7 @@ console.log("ellie's \n\tbook");
 
 // 2. Numeric operators
 console.log(1 + 1); // add
-console.log(1 - 1); // subtract
+console.log(1 - 1); // substract
 console.log(1 / 1); // divide
 console.log(1 * 1); // multiply
 console.log(5 % 2); // remainder
