@@ -111,18 +111,3 @@ console.log(`value: ${text}, type: ${typeof text}`);
 text = '8' / '2';
 console.log(`value: ${text}, type: ${typeof text}`);
 console.log(text.charAt(0));
-
-// 6. Logical operators: || (or), && (and). ! (not)
-const value1 = false;
-const value2 = 4 < 2;
-
-// || (or), finds the first truthy value
-console.log(`or: ${value1 || value2 || check()}`);
-
-function check() {
-    for (let i = 0; i < 10; i++) {
-        //wasting time
-        console.log('😱');
-    }
-    return true;
-}
