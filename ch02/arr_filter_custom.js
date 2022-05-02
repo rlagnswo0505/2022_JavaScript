@@ -19,13 +19,14 @@ var arr = {
                 newArr.push(this[i]);
             }
         }
-        console.log(cb(this.fi));
+        // console.log(cb(this.i));
+        console.log(newArr);
         return newArr;
     },
 };
 
 var resultArr = arr.filter(function (item, idx) {
-    console.log(`${idx}: ${item}`);
+    // console.log(`${idx}: ${item}`);
     if (item <= 8) {
         return true;
     }
@@ -33,3 +34,4 @@ var resultArr = arr.filter(function (item, idx) {
 console.log(resultArr);
 
 // 콜백 함수에 대한 이해, 비동기에 대한 이해, 콜백 지옥, promise, async/await
+const newArr2 = [1, 2, 3, 4];
