@@ -84,22 +84,35 @@ class Shape {
         this.color = color;
     }
     draw() {
-        console.log(`drawing ${this.color} color of`);
+        console.log(`drawing ${this.color} color!`);
     }
 
     getArea() {
-        return width * this.height;
+        return this.width * this.height;
     }
 }
 
 class Rectangle extends Shape {}
-class Triangle extends shape {}
+class Triangle extends Shape {
+    draw() {
+        super.draw();
+        console.log('🔺');
+    }
+    getArea() {
+        return (this.width * this.height) / 2;
+    }
+    toString() {
+        return `Triangle: color: ${this.color}`;
+    }
+}
 const rectangle = new Rectangle(20, 20, 'blue');
 rectangle.draw();
+console.log(rectangle.getArea());
 const triangle = new Triangle(20, 20, 'blue');
 triangle.draw();
+console.log(triangle.getArea());
 
-// 6. Class checking: instanceOf
+6. Class checking: instanceOf
 console.log(rectangle instanceof Rectangle);
 console.log(triangle instanceof Rectangle);
 console.log(triangle instanceof Triangle);
