@@ -92,9 +92,24 @@ class Shape {
     }
 }
 
-class Rectangle extends Shape { }
-class Triangle extends shape { }
-const rectangle = new Rectangle(20,20,'blue');
+class Rectangle extends Shape {}
+class Triangle extends shape {}
+const rectangle = new Rectangle(20, 20, 'blue');
 rectangle.draw();
-const triangle = new Triangle(20,20,'blue');
+const triangle = new Triangle(20, 20, 'blue');
 triangle.draw();
+
+// 6. Class checking: instanceOf
+console.log(rectangle instanceof Rectangle);
+console.log(triangle instanceof Rectangle);
+console.log(triangle instanceof Triangle);
+console.log(triangle instanceof Shape);
+console.log(triangle instanceof Object);
+console.log(triangle.toString());
+
+let obj = { value: 5 };
+function change(value) {
+    value.value = 7;
+}
+change(obj);
+console.log(obj);
