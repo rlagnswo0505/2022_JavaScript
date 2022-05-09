@@ -23,15 +23,26 @@ var arr = {
         console.log(newArr);
         return newArr;
     },
+    reduce: function (cb, acc) {
+        var result = 0;
+        for (var i = 0; i < this.length; i++){
+            acc = cb(this[i])
+        }
+        return acc;
+    }
 };
 
-var resultArr = arr.filter(function (item, idx) {
-    // console.log(`${idx}: ${item}`);
-    if (item <= 8) {
-        return true;
-    }
-});
-console.log(resultArr);
+console.log(arr.reduce(function(acc, value, index, array){
+    return acc + value;
+}),0);
+
+// var resultArr = arr.filter(function (item, idx) {
+//     // console.log(`${idx}: ${item}`);
+//     if (item <= 8) {
+//         return true;
+//     }
+// });
+// console.log(resultArr);
 
 // 콜백 함수에 대한 이해, 비동기에 대한 이해, 콜백 지옥, promise, async/await
-const newArr2 = [1, 2, 3, 4];
+
