@@ -15,5 +15,9 @@ function fn2(val) {
 var p1 = fn1();
 p1.then(function (result) {
     console.log(result);
+    return result;
+}).then(function (result) {
+    return fn2(result)
+}).then(function (result) {
+    console.log(`result : ${result}`);
 })
-fn2(val)
