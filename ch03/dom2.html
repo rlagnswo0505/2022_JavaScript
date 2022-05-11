@@ -19,6 +19,15 @@
         var divClassElem = document.querySelectorAll('.div_class');
         divClassElem[0].innerHTML = 'Hello';
         divClassElem[1].innerHTML = 'Good Bye';
+
+        var divElem = document.createElement('div');
+        // innerHTML은 태그가 동작을 하고 innerText는 태그를 문자열로 인식
+        divElem.innerHTML = '<a href="https://www.google.com">Google</a>';
+
+        // append는 추가한다 (뒤에 붙음) 앞에 붙는 것은 prepend
+        divIdElem.append(divElem);
+
+
     </script>
 </body>
 
