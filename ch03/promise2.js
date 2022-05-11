@@ -8,4 +8,6 @@ var p2 = p1.then(function (result) {
 
 p2.then(function (result) {
     console.log(`result : ${result}`);
-})
+});
+
+
