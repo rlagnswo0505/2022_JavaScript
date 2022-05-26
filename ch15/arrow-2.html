@@ -18,10 +18,15 @@
     // 그러면 값을 리턴!!
     const arrow2 = () => 10;
 
+    // -- 파라미터 소괄호 생략 가능
+    // 파라미터가 1개일 때만!
+    const doubleVal = n1 => n1 * n1;
+
     const sum = (n1, n2) => n1 + n2;
     console.log(arrow());
     console.log(arrow2());
     console.log(sum(10, 20));
+    console.log(doubleVal(5));
 
 
   </script>
