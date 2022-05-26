@@ -10,19 +10,18 @@
 
 <body>
   <script>
-    function sum(n1, n2) {
-      document.write(`더하기 : ${n1 + n2}<br>`);
+    const hi = function () {
+      console.log('익명합수 hi');
+    };
+    function hi2() {
+      console.log('함수 hi2');
     }
-    function minus(n1, n2) {
-      document.write(`빼기 : ${n1 - n2}<br>`);
-    }
-    let fn = sum;
-    fn(22, 11);
-    sum(22, 11);
-
-    fn = minus;
-    fn(22, 11);
-
+    const arrow = () => {
+      console.log('화살표 함수 arrow');
+    };
+    hi();
+    hi2();
+    arrow();
   </script>
 </body>
 

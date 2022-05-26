@@ -10,19 +10,8 @@
 
 <body>
   <script>
-    function sum(n1, n2) {
-      document.write(`더하기 : ${n1 + n2}<br>`);
-    }
-    function minus(n1, n2) {
-      document.write(`빼기 : ${n1 - n2}<br>`);
-    }
-    let fn = sum;
-    fn(22, 11);
-    sum(22, 11);
-
-    fn = minus;
-    fn(22, 11);
-
+    (() => document.write('실행<br>'))();
+    ((val) => document.write(`val : ${val}`))(10);
   </script>
 </body>
 
