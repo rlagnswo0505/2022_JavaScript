@@ -14,7 +14,7 @@
         var msg = '입력이 취소됐습니다.';
 
         if (userNumber !== null) {
-            msg = parseInt(userNumber) % 3 === 0 ? '3의 배수입니다.' : '3의 배수가 아닙니다.';
+            msg = userNumber !== '' && Number(userNumber) % 3 === 0 ? '3의 배수입니다.' : '3의 배수가 아닙니다.';
         }
         alert(msg);
     </script>
