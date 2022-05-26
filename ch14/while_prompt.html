@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    let sum = 0;
+    while (true) {
+      let n = parseInt(prompt('값을 입력해주세요(종료 0)'));
+      sum += n;
+      if (n == 0) {
+        break;
+      }
+    }
+    document.write(sum);
+    // 프롬프트를 0 입력할때 까지 계속 보여주고 아니면 안에 값 계속 더하기
+  </script>
+</body>
+
+</html>

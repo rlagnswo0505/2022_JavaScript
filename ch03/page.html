@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            display: flex;
+        }
+
+        .box1 {
+            background-color: red;
+            width: 100%;
+            height: 100px;
+        }
+
+        .none {
+            display: none;
+        }
+
+        .box2 {
+            background-color: blue;
+            width: 100%;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>안녕하세요</h1>
+    <main>
+        <button class="button1">box1</button>
+        <div class="box1">
+            <ul>
+                <li>box1</li>
+                <li>box2</li>
+                <li>box3</li>
+                <li>box4</li>
+                <li>box5</li>
+                <li>box6</li>
+                <li>box7</li>
+                <li>box8</li>
+                <li>box9</li>
+                <li>box10</li>
+                <li>box11</li>
+                <li>box12</li>
+                <li>box13</li>
+                <li>box14</li>
+                <li>box15</li>
+                <li>box16</li>
+                <li>box17</li>
+                <li>box18</li>
+                <li>box19</li>
+                <li>box20</li>
+            </ul>
+        </div>
+        <button class="button2">box2</button>
+        <div class="box2 none">
+            안녕하세요
+        </div>
+        <div class="box3">
+            안녕하세요
+        </div>
+    </main>
+    <script>
+        const button1 = document.querySelector(".button1");
+        const button2 = document.querySelector(".button2");
+        const box1 = document.querySelector(".box1");
+        const box2 = document.querySelector(".box2");
+
+        function handleCloseBox1(event) {
+            box1.classList.toggle('none');
+            box2.classList.toggle('none');
+        }
+
+        button1.addEventListener("click", handleCloseBox1);
+        button2.addEventListener("click", handleCloseBox1);
+        $(document).ready(function () {
+            document.querySelector(".box3").innerHTML = '<object type="text/html" data="list.html"></object>';
+        })
+    </script>
+</body>
+
+</html>

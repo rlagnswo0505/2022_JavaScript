@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var n = prompt('숫자를 입력하세요 : ');
+    let factorial = 1;
+    let i = 1;
+    if (n !== "" || n !== null) {
+      while (n > i) {
+        i++;
+        factorial *= i;
+      }
+      document.write(`${n}factorial = ${factorial}`);
+    } else {
+      document.write('노입력');
+    };
+
+    // 값을 입력하지 않았다면 화면에 노입력
+    // 숫자값을 입력했다면 팩토리얼 한다.
+    // ex) 5 > 5 * 4 * 3 * 2 * 1= 120 
+  </script>
+</body>
+
+</html>
