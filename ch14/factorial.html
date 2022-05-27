@@ -21,7 +21,9 @@
             if(cnt) {
                 var result = 1;
                 while(cnt > 0) {
-                    result *= cnt--;
+                    //result *= cnt--;
+                    result = result * cnt;
+                    cnt--;
                 }
                 document.write(`${n}! : ${result}`);
             } else {
