@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 상수는 입력된 값이 바뀌지 않는다. 
+    // 배열을 수정하게되면 주솟값은 이동없이 객체만 변화한 것 이라 오류가 뜨지 않는다
+    const arr = ['A', 'B', 'C'];
+    console.log(arr);
+    arr.push('D');
+    console.log(arr);
+
+    const arr2 = arr.concat(['D', 'E']);
+    console.log(arr2);
+    console.log(['D', 'E'].concat(arr));
+  </script>
+</body>
+
+</html>
