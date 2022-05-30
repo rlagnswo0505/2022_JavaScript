@@ -22,18 +22,23 @@
             const sDateMilSec = sDate.getTime();
             const eDateMilSec = eDate.getTime();
             const passedSec = (eDateMilSec - sDateMilSec) / 1000;
+            const timeSec = 1;
+            const timeMin = timeSec * 60;
+            const timeHour = timeMin * 60;
+            const timeDay = timeHour * 24;
+            const timeMon = timeDay * 30;
 
-            if (passedSec < 3540) {
-                const min = Math.floor(passedSec / 60);
+            if (passedSec < (timeMin - timeSec)) {
+                const min = Math.floor(passedSec / timeSec);
                 return `${min}분 전`;
-            } else if (passedSec < 82800) {
-                const hour = Math.floor(passedSec / 3600);
+            } else if (passedSec < (timeDay - timeHour)) {
+                const hour = Math.floor(passedSec / timeMin);
                 return `${hour}시간 전`;
-            } else if (passedSec < 1296000) {
-                const date = Math.floor(passedSec / 86400);
+            } else if (passedSec < (timeMon * 0.5)) {
+                const date = Math.floor(passedSec / timeHour);
                 return `${date}일 전`;
-            } else if (passedSec < 7776000) {
-                const mon = Math.floor(passedSec / 2592000);
+            } else if (passedSec < (timeMon * 3)) {
+                const mon = Math.floor(passedSec / timeMon);
                 return `${mon}달 전`;
             } else {
                 const year = sDate.getFullYear();
