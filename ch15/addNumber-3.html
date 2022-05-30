@@ -7,14 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>짝수끼리 더하기</h1>
     <script>
-        //1~10까지 짝수만 더해서 결과값을 화면에 출력해주세요.
-        var sum = 0;
-        for(var i=2; i<=10; i+=2) {
-            sum += i;
-            document.write(`${i} ---- ${sum}<br>`);
+        const sum = function(a, b) {
+            return a + b;
         }
+
+        const result = sum(10, 20);
+        document.write(`result : ${result}<br>`);
+
+        const fn = sum;
+        const result2 = sum(10, 20);
+        document.write(`result : ${result2}<br>`);
+
     </script>
 </body>
 </html>
