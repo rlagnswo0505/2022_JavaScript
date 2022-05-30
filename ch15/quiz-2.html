@@ -1,52 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-
 <body>
-  <script>
-    // const n1 = prompt('값 1');
-    // const n2 = prompt('값 2');
-    // 두 수를 입력받아 크기를 서로 비교하여 더큰수 알림창에 표시
+    <script>
+        (function() {
+            const n1 = prompt('값 1');
+            const n2 = prompt('값 2'); 
 
+            if(isNaN(n1) || isNaN(n2)) {
+                alert('숫자를 입력해 주세요.');
+                return;
+            }
 
-    // function alertDiffNum(x, y) {
-    //   if (x > y) {
-    //     return alert(`${x}(이)가 ${y}보다 큽니다.`);
-    //   } else if (y > x) {
-    //     return alert(`${y}(이)가 ${x}보다 큽니다.`);
-    //   } else if (x === y) {
-    //     return alert('숫자가 같습니다.');
-    //   }
-    //   return alert('숫자가 아닙니다.');
-    // }
-    // alertDiffNum(n1, n2);
+            function alertDiffNum(n1, n2) {
+                if(n1 === n2) {
+                    alert('숫자가 같습니다.');
+                    return;
+                }
+                const bigNum = n1 > n2 ? n1 : n2;
+                const smallNum = n1 < n2 ? n1 : n2;
 
-    (function () {
-      const n1 = prompt('값 1');
-      const n2 = prompt('값 2');
-      if (isNaN(n1) || isNaN(n2)) {
-        alert('숫자를 입력해 주세요');
-        return;
-      }
-      function alertDiffNum(n1, n2) {
-        if (n1 === n2) {
-          alert('숫자가 같습니다.');
-          return;
-        }
-        const bigNum = n1 > n2 ? n1 : n2;
-        const smallNum = n1 < n2 ? n1 : n2;
+                alert(`${bigNum}(이)가 ${smallNum}보다 큽니다.`);
+            }
+            alertDiffNum(Number(n1), Number(n2));
+        })();
+        
 
-        alert(`${bigNum}(이)가 ${smallNum}보다 큽니다.`);
-      }
-      alertDiffNum(Number(n1), Number(n2));
-    })();
-  </script>
+        
+
+         
+
+        //두 수를 입력받아 크기를 서로 비교하여 더 큰 
+        //숫자를 알림창(alert)에 표시하는 함수를 작성하고
+        //실행해 보세요.
+        //만약 같은 값이면 > 숫자가 같습니다.
+
+        //예) 1과 5를 입력 > 5(이)가 1보다 큽니다.
+    </script>
 </body>
-
 </html>

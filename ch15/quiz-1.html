@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-
 <body>
-  <script>
-    const n1 = Number(prompt('값 1'));
-    const n2 = Number(prompt('값 2'));
+    <script>
+        const n1 = Number(prompt('값 1'));
+        const n2 = Number(prompt('값 2'));
 
-    // 두수의 값이 같으면 두수를 곱한값을 리턴
-    // 두수의 값이 다르면 두수를 더한값을 리턴
-    function sumMulti(x, y) {
-      if (x === y) {
-        return console.log(x * y);
-      }
-      return console.log(x + y);
-    }
-    // sumMulti함수를 이용하여 n1, n2의 결과값을 콘솔에 출력
-    sumMulti(n1, n2);
-  </script>
+        //두 수의 값이 같으면 두 수를 곱한 값을 리턴
+        //두 수의 값이 다르면 두 수를 더한 값을 리턴
+        function sumMulti(x, y) {
+            return x === y ? x * y : x + y;
+        }
+        const result = sumMulti(n1, n2);
+        console.log(result);
+        //sumMulti함수를 이용하여 n1, n2값의 결과값을
+        //콘솔에 프린트해주세요.
+
+    </script>
 </body>
-
 </html>
