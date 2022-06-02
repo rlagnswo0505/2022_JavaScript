@@ -66,13 +66,12 @@
   </div>
   <script>
     const lightBox = document.querySelector('#lightBox');
-    const lightBoxImage = document.querySelector('#lightBoxImage');
+    const lightBoxImage = lightBox.querySelector('#lightBoxImage');
     const pics = document.querySelectorAll('.pic');
 
     pics.forEach((pic) => {
       pic.addEventListener("click", showLightBox);
     });
-
     // pics.forEach((pic) => {
     //   pic.onclick = showLightBox;
     // });
@@ -85,11 +84,6 @@
     lightBox.addEventListener("click", () => {
       lightBox.style.display = 'none';
     });
-
-
-
-    const 배열들 = [1, 2, 3];
-    배열들.forEach(배열 => console.log(배열));
 
   </script>
 </body>
