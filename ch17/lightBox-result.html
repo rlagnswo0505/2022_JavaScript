@@ -21,6 +21,7 @@
     display: inline-block;
   }
 
+
   .pic {
     width: 300px;
     cursor: pointer;
@@ -68,13 +69,13 @@
     const lightBoxImage = document.querySelector('#lightBoxImage');
     const pics = document.querySelectorAll('.pic');
 
-    // pics.forEach((pic) => {
-    //   pic.addEventListener("click", showLightBox);
-    // });
-
     pics.forEach((pic) => {
-      pic.onclick = showLightBox;
+      pic.addEventListener("click", showLightBox);
     });
+
+    // pics.forEach((pic) => {
+    //   pic.onclick = showLightBox;
+    // });
 
     function showLightBox() {
       const bigLocation = this.src;
@@ -83,7 +84,13 @@
     }
     lightBox.addEventListener("click", () => {
       lightBox.style.display = 'none';
-    })
+    });
+
+
+
+    const 배열들 = [1, 2, 3];
+    배열들.forEach(배열 => console.log(배열));
+
   </script>
 </body>
 
