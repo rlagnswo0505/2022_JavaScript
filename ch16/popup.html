@@ -17,6 +17,7 @@
 
 <body>
   <button id="btnOpen">창 열기</button>
+  <button id="btnMove" onclick="moveWin()">창 이동</button>
   <button id="btnClose">창 닫기</button>
   <div id="back"></div>
 
@@ -39,6 +40,10 @@
       const divBack = document.querySelector('#back');
       divBack.style.backgroundColor = 'red';
     }
+    function moveWin() {
+      setInterval();
+      newWin.moveBy(10, 10);
+    };
   </script>
 </body>
 
