@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img {
+      width: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <img id="dog"
+    src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
+    alt="">
+  <script>
+    const imgDog = document.querySelector('#dog');
+
+    imgDog.onclick = function (e) {
+      console.log(`이벤트 유형 : ${e.type}, 발생위치 : ${e.pageX}, ${e.pageY}`);
+      console.log(e.altKey);
+      console.log(e.target);
+    }
+
+  </script>
+</body>
+
+</html>

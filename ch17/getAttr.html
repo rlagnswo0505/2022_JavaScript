@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="prod-pic">
+    <button onclick="changePic()">이미지 바꾸기</button>
+    <img id="racoon" width="300" height="200" onclick="displaySrc()"
+      src="https://images.unsplash.com/photo-1497752531616-c3afd9760a11?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+      alt="너구리">
+  </div>
+  <script>
+    const racoon = document.querySelector('#racoon');
+    function changePic() {
+      // 누구의 무엇을 어떤값으로
+      racoon.src = 'https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80';
+
+      racoon.setAttribute('src', 'https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80');
+    }
+
+    function displaySrc() {
+      console.log((`getAttr: ${racoon.getAttribute('src')}`));
+      console.log((`.src: ${racoon.src}`));
+      console.log((`.alt: ${racoon.alt}`));
+      console.log((`.width: ${racoon.width}`));
+      console.log((`.height: ${racoon.height}`));
+      console.log((`.onclick: ${racoon.onclick}`));
+    }
+  </script>
+</body>
+
+</html>
