@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #rect {
+      width: 300px;
+      height: 300px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="rect"></div>
+  <script>
+    const divRect = document.querySelector('#rect');
+    divRect.addEventListener('mouseover', () => {
+      divRect.style.backgroundColor = 'green';
+      divRect.style.borderRadius = '50%';
+    });
+    divRect.addEventListener('mouseout', () => {
+      divRect.style.backgroundColor = null;
+      divRect.style.borderRadius = null;
+    })
+  </script>
+</body>
+
+</html>
