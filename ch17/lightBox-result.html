@@ -77,8 +77,9 @@
     // });
 
     function showLightBox() {
-      const bigLocation = this.src;
-      lightBoxImage.setAttribute('src', bigLocation);
+      // const bigLocation = this.src;
+      // lightBoxImage.setAttribute('src', bigLocation);
+      lightBoxImage.src = this.src;
       lightBox.style.display = 'flex';
     }
     lightBox.addEventListener("click", () => {

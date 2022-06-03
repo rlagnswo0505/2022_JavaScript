@@ -20,13 +20,14 @@
     function addP() {
       if (divInfo.innerHTML === '') {
         const newP = document.createElement('div');
+        const newDiv = document.appendChild(document.createElement('div'));
         const txt = `DOM은 document object model의 줄임말입니다.${cnt++}`;
         // const txtNode = document.createTextNode(txt);
         // newP.appendChild(txtNode);
 
         newP.append(txt);
         // append와 appendChild의 차이점은 appendChild는 객체만 들어갈 수 있다.
-        document.querySelector('#info').appendChild(newP);
+        divInfo.appendChild(newP);
       } else {
         divInfo.innerHTML = null;
       }
