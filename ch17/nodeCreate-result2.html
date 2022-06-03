@@ -12,6 +12,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 4px 0;
     }
 
     .c_pointer {
@@ -41,15 +42,16 @@
     subForm.addEventListener('submit', newReg);
     function newReg(event) {
       event.preventDefault();
-      const newDiv = itemList.appendChild(document.createElement('div'));
-      newDiv.append(subject.value);
-
+      if (subject.value !== '') {
+        const newDiv = itemList.appendChild(document.createElement('div'));
+        newDiv.append(subject.value);
+        const newRemove = newDiv.appendChild(document.createElement('button'));
+        newRemove.innerHTML = "❌";
+        newRemove.addEventListener("click", () => {
+          newRemove.parentElement.remove();
+        });
+      }
       subject.value = null;
-
-      newDiv.classList.add('c_pointer');
-      newDiv.addEventListener("click", () => {
-        newDiv.remove();
-      });
     }
     removeBtn.addEventListener('click', () => {
       itemList.lastChild.remove();
