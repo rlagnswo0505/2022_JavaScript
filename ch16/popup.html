@@ -17,6 +17,7 @@
 
 <body>
   <button id="btnOpen">창 열기</button>
+  <button id="btnMove" onclick="moveWin()">창 이동</button>
   <button id="btnClose">창 닫기</button>
   <div id="back"></div>
 
@@ -27,7 +28,7 @@
     btnOpen.addEventListener('click', () => {
       newWin = open('notice.html', '알림', 'width=500, height=400, screenX=400, screenY=400');
       if (newWin === null) {
-        alert('차단을 풀어주세요!!!');
+        alert('팝업 차단을 풀어주세요!!!');
       }
     });
     const btnClose = document.querySelector('#btnClose');
@@ -39,6 +40,10 @@
       const divBack = document.querySelector('#back');
       divBack.style.backgroundColor = 'red';
     }
+    function moveWin() {
+      setInterval();
+      newWin.moveBy(10, 10);
+    };
   </script>
 </body>
 

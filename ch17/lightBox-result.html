@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  html,
+  body {
+    height: 100%;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+
+  .pic {
+    width: 300px;
+    cursor: pointer;
+  }
+
+  #lightBox {
+    height: 100%;
+    width: 100%;
+    background-color: #00000066;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+  }
+
+  #lightBox>img {
+    width: 500px;
+    border: 2px solid #fff;
+
+  }
+</style>
+
+<body>
+  <div class="row">
+    <ul>
+      <li> <img class="pic"
+          src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1459&q=80"
+          alt=""></li>
+      <li> <img class="pic"
+          src="https://images.unsplash.com/photo-1470093851219-69951fcbb533?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+          alt=""></li>
+      <li> <img class="pic"
+          src="https://images.unsplash.com/photo-1589656966895-2f33e7653819?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+          alt=""></li>
+    </ul>
+  </div>
+  <div id="lightBox">
+    <img src="" id="lightBoxImage" alt="">
+  </div>
+  <script>
+    const lightBox = document.querySelector('#lightBox');
+    const lightBoxImage = lightBox.querySelector('#lightBoxImage');
+    const pics = document.querySelectorAll('.pic');
+
+    pics.forEach((pic) => {
+      pic.addEventListener("click", showLightBox);
+    });
+    // pics.forEach((pic) => {
+    //   pic.onclick = showLightBox;
+    // });
+
+    function showLightBox() {
+      // const bigLocation = this.src;
+      // lightBoxImage.setAttribute('src', bigLocation);
+      lightBoxImage.src = this.src;
+      lightBox.style.display = 'flex';
+    }
+    lightBox.addEventListener("click", () => {
+      lightBox.style.display = 'none';
+    });
+
+  </script>
+</body>
+
+</html>
