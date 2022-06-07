@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul {
+      list-style: none;
+    }
+
+    li {
+      cursor: pointer;
+      margin-bottom: 5px;
+    }
+
+    .clicked {
+      color: #ccc;
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>할 일 목록</h1>
+  <ul class="ul_box">
+    <li><span class="check">v 할 일 1</span></li>
+    <li><span class="check">v 할 일 2</span></li>
+    <li><span class="check">v 할 일 3</span></li>
+    <li><span class="check">v 할 일 4</span></li>
+    <li><span class="check">v 할 일 5</span></li>
+    <li><span class="check">v 할 일 6</span></li>
+    <li><span class="check">v 할 일 7</span></li>
+  </ul>
+</body>
+<script>
+  const checkList = document.querySelectorAll(".check");
+
+  checkList.forEach(check => {
+    check.addEventListener("click", (e) => {
+      e.target.classList.toggle("clicked");
+    });
+  });
+</script>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    input[type='number'] {
+      width: 50px;
+    }
+
+    table {
+      margin-top: 10px;
+      border-collapse: collapse;
+    }
+
+    tr,
+    td {
+      border: 1px solid #cccf;
+    }
+
+    td {
+      padding: 5px 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <input type="number" name="" id="rowNum">행
+    <input type="number" name="" id="colNum">열
+    <button>작성</button>
+  </div>
+  <div id="result">
+
+  </div>
+  <script>
+    const rowNum = document.querySelector("#rowNum");
+    const colNum = document.querySelector("#colNum");
+    const btn = document.querySelector("button");
+    const result = document.querySelector("#result");
+
+    btn.addEventListener("click", () => {
+      const rowVal = Number(rowNum.value);
+      const colVal = Number(colNum.value);
+      result.innerHTML = "<table class='resultTable'></table>";
+      const resultTable = document.querySelector(".resultTable");
+
+      // const table = document.createElement('table');
+      // result.innerHTML = '';
+      // result.appendChild(table);
+
+
+      for (let i = 0; i < colVal; i++) {
+        let tr = document.createElement("tr");
+        resultTable.appendChild(tr);
+        for (let z = 0; z < rowVal; z++) {
+          let td = document.createElement("td");
+          tr.appendChild(td);
+          td.innerHTML = `${i}, ${z}`;
+        }
+      }
+    })
+
+
+
+
+  </script>
+</body>
+
+</html>
