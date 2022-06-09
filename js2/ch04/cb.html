@@ -1,52 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-
 <body>
-  <script>
-    function calc(cb, n1, n2) {
-      return cb(n1, n2);
-    }
-    function fnSum(n1, n2) {
-      return n1 + n2;
-    }
+    <script>
+        function calc(cb, n1, n2) {
+            return cb(n1, n2);
+        }
 
-    function fnMulti(n1, n2) {
-      return n1 * n2;
-    }
+        function fnSum(n1, n2) {
+            return n1 + n2;
+        }
+
+        function fnMulti(n1, n2) {
+            return n1 * n2;
+        }
+
+        // 나누기 결과값 나오게...
+        
+        const r1 = calc(fnSum, 10, 20);
+        console.log(r1);
+
+        const r2 = calc(fnMulti, 10, 20);
+        console.log(r2);
+
+        const r3 = calc(function(n1, n2) {
+            return n1 - n2;
+        }, 100, 20);
+        console.log(r3);
 
 
-    const r4 = calc(function (n1, n2) {
-      return n1 / n2;
-    }, 100, 20);
-    console.log(r4);
 
+        // fnSum()
+        // fnSum(4, 5);
+        // console.log(fnSum);
+        // console.log(fnSum(4, 5));
+        /*
+        const ddd = fnSum(4, 5);
+        console.log(ddd);
+        const ddd2 = fnMulti(ddd, 2);
+        */
 
-
-
-
-
-
-
-    console.log(fnSum(4, 5));
-
-    const r1 = calc(fnSum, 10, 20);
-    console.log(r1);
-
-    const r2 = calc(fnMulti, 20, 10);
-    console.log(r2);
-
-    const r3 = calc(function (n1, n2) {
-      return n1 - n2;
-    }, 100, 20);
-    console.log(r3);
-  </script>
+    </script>
 </body>
-
 </html>

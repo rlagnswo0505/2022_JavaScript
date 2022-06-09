@@ -8,14 +8,19 @@
 </head>
 <body>
     <script>
-        function sum(n1, n2) {
-            return n1 + n2;
+        function m1() {
+            console.log('1');           
         }
-        const tabel = document.createElement('table');
 
-        const result = sum(10, 60);
-        console.log(sum(10, 60));
-        console.log(result);
+        function m2() {
+            console.log('2');
+            return 1;
+        }
+       
+        if(m1() && m2()) {
+            console.log('3');
+        }
+       
     </script>
 </body>
 </html>
