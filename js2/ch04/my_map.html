@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         const myArr = {
@@ -17,22 +19,31 @@
             '5': 56,
             '6': 47,
             'length': 7,
-            'forEach': function(cb) {
-                for(let i=0; i<this.length; i++) {                    
+            'forEach': function (cb) {
+                for (let i = 0; i < this.length; i++) {
                     cb(this[i], i);
                 }
             },
-            'map': function(cb) {
+            'map': function (cb) {
                 const tempArr = [];
-                for(let i=0; i<this.length; i++) {
+                for (let i = 0; i < this.length; i++) {
                     //const returnVal = cb(this[i], i);
                     //tempArr.push(returnVal);
                     tempArr.push(cb(this[i], i));
                 }
                 return tempArr;
+            },
+            'filter': function (cb) {
+                const arr = [];
+                for (let i = 0; i < this.length; i++) {
+                    if (true) {
+                        tempArr.push(cb(this[i], i));
+                    }
+                }
+                return tempArr;
             }
-        }
-        const arr2 = myArr.map(function(item, idx) {
+        };
+        const arr2 = myArr.map(function (item, idx) {
             console.log(idx);
             return item + 5;
         });
@@ -41,10 +52,18 @@
         console.log(myArr);
         //myArr에 4번째 값 이후로 값들을 x2 한 새로운 배열을 만든다.
         const standIdx = 4;
-        const arr3 = myArr.map(function(item, idx) {
+        const arr3 = myArr.map(function (item, idx) {
             return idx >= standIdx ? item * 2 : item;
         });
         console.log(arr3);
+
+        const arr2 = arr.filter(function (item, idx) {
+            if (item % 2 === 0) {
+                return true;
+            }
+        });
+        console.log(arr2.toString());
     </script>
 </body>
+
 </html>
