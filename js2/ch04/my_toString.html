@@ -34,28 +34,28 @@
                 return tempArr;
             },
             'filter': function (cb) {
-                const arr = [];
+                const tempArr = [];
                 for (let i = 0; i < this.length; i++) {
-                    if (cb(this[i])) {
-                        arr.push(this[i]);
+                    if (true) {
+                        tempArr.push(cb(this[i], i));
                     }
                 }
-                return arr;
+                return tempArr;
+            },
+            toString: function (cb) {
+                let strArr = "[";
+                for (let i = 0; i < this.length; i++) {
+                    if (cb(this[i], idx))
+                        strArr + `,${this[i]}`;
+                }
+                strArr + "]";
             }
         };
-        const arr2 = myArr.map(function (item, idx) {
-            console.log(idx);
-            return item + 5;
-        });
-        //console.log(arr.toString());
-        console.log(arr2.toString());
-        console.log(myArr);
-        //myArr에 4번째 값 이후로 값들을 x2 한 새로운 배열을 만든다.
-        const standIdx = 4;
-        const arr3 = myArr.map(function (item, idx) {
-            return idx >= standIdx ? item * 2 : item;
-        });
-        console.log(arr3);
+        // const arr2 = myArr.filter(function (item, idx) {
+        //   return item % 2 === 0;
+        // });
+        // console.log(arr2.toString());
+        console.log(myArr.toString());
     </script>
 </body>
 

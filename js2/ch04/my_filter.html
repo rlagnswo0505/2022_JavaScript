@@ -41,14 +41,27 @@
           }
         }
         return newArr;
+      },
+      toString: function () {
+        let strArr = "[";
+        for (let i = 0; i < this.length; i++) {
+          if (i > 0) {
+            strArr += ",";
+          }
+          strArr += this[i];
+        }
+        strArr += "]";
+        return strArr;
       }
     };
-    const arr2 = myArr.filter(function (item, idx) {
-      if (item % 2 === 0) {
-        return true;
-      }
-    });
-    console.log(arr2.toString());
+    // const arr2 = myArr.filter(function (item, idx) {
+    //   if (item % 2 === 0) {
+    //     return true;
+    //   }
+    // });
+    // console.log(arr2.toString());
+    console.log(myArr.toString());
+
   </script>
 </body>
 

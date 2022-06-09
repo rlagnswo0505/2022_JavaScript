@@ -1,0 +1,19 @@
+{
+  "name": "yes",
+  "version": "1.0.0",
+  "description": "자바스크립트 공부하기\r 열심히 해봐야지\r 줄이 안바뀌네\r 어케바꾸지?",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rlagnswo0505/2022_JavaScript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rlagnswo0505/2022_JavaScript/issues"
+  },
+  "homepage": "https://github.com/rlagnswo0505/2022_JavaScript#readme"
+}
