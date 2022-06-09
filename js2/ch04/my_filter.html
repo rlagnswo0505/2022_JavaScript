@@ -36,7 +36,7 @@
       filter: function (cb) {
         var newArr = [];
         for (var i = 0; i < this.length; i++) {
-          if (cb(this[i])) {
+          if (cb(this[i], i)) {
             newArr.push(this[i]);
           }
         }
