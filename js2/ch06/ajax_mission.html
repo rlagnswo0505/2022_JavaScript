@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img {
+      width: 200px;
+      height: 100px;
+      object-fit: cover;
+      margin: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="image_box">
+
+  </div>
+  <button onclick="getData();">데이터 가져오기</button>
+  <script>
+    const imageBox = document.querySelector('.image_box');
+    let page = 1;
+
+    function getData() {
+      console.log(`page : ${page}`);
+      const url = `https://picsum.photos/v2/list?limit=10&page=${page++}`;
+      // get 방식
+      fetch(url).then(function (res) {
+        return res.json();
+      }).then(function (data) {
+        makeList(data);
+      });
+    };
+
+    function makeList(data) {
+      data.forEach(function (item) {
+        const img = makeImg(item);
+        imageBox.appendChild(img);
+      });
+    }
+    function makeImg(item) {
+      const img = document.createElement('img');
+      img.src = `https://picsum.photos/id/${item.id}/${~~(Number(item.width) * 0.1)}/${~~(Number(item.height) * 0.1)}`;
+      return img;
+    }
+
+    // post 방식
+    /*
+      Restful API(CRUD) > 규칙!!!
+      get - select
+      post - insert
+      put - update
+      delete - delete
+
+      /board/write.php (get) 글 쓰는 화면 열기
+      /board/write.php (post) 글 쓰기 처리
+
+      /board/list.php (get) 글 리스트 보기
+      /board/detail.php (get) 글 읽기
+      /board/delete.php (get/post) 글 삭제
+
+      /board/mod.php (get) 글 리스트 보기
+      /board/mod.php (post) 글 수정 처리
+
+      --------------------------------
+
+
+      
+    */
+
+  </script>
+</body>
+
+</html>
