@@ -1,6 +1,7 @@
 function fn1() {
   return new Promise(function(resolve, reject) {
     resolve(10);
+    // reject(new Error('문제발생'))
   });
 }
 // 시간이 걸리는 작업은 리턴으로 받을 수 없다
@@ -14,8 +15,15 @@ function fn2(val) {
 }
 
 async function mainRun() {
-  const val1 = await fn1();
-  console.log(val1);
+  let val1 = 0;
+  try {
+    val1 = await fn1();
+    console.log(val1);
+  }
+  catch (e) { 
+    console.log(e);
+  }
+  
   const val2 = await fn2(val1);
   console.log(val2);
 }
