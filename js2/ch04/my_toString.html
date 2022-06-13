@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
     <script>
         const myArr = {
@@ -19,44 +17,40 @@
             '5': 56,
             '6': 47,
             'length': 7,
-            'forEach': function (cb) {
-                for (let i = 0; i < this.length; i++) {
+            'forEach': function(cb) {
+                for(let i=0; i<this.length; i++) {                    
                     cb(this[i], i);
                 }
             },
-            'map': function (cb) {
+            'map': function(cb) {
                 const tempArr = [];
-                for (let i = 0; i < this.length; i++) {
-                    //const returnVal = cb(this[i], i);
-                    //tempArr.push(returnVal);
+                for(let i=0; i<this.length; i++) {                    
                     tempArr.push(cb(this[i], i));
                 }
                 return tempArr;
             },
-            'filter': function (cb) {
+            'filter': function(cb) {
                 const tempArr = [];
-                for (let i = 0; i < this.length; i++) {
-                    if (true) {
-                        tempArr.push(cb(this[i], i));
+                for(let i=0; i<this.length; i++) {                    
+                    if(cb(this[i], i)) {
+                        tempArr.push(this[i]);
                     }
                 }
                 return tempArr;
             },
-            toString: function (cb) {
-                let strArr = "[";
-                for (let i = 0; i < this.length; i++) {
-                    if (cb(this[i], idx))
-                        strArr + `,${this[i]}`;
+            'toString': function() {
+                let str = '[';
+                for(let i=0; i<this.length; i++) {                    
+                    str += i < this.length - 1 ? `${this[i]}, ` : `${this[i]}]`;
                 }
-                strArr + "]";
-            }
-        };
-        // const arr2 = myArr.filter(function (item, idx) {
-        //   return item % 2 === 0;
-        // });
-        // console.log(arr2.toString());
+                return str;
+            }            
+        }
+        const arr2 = myArr.filter(function(item, idx) {            
+            return item % 2 === 0;
+        });
+        console.log(arr2.toString());
         console.log(myArr.toString());
     </script>
 </body>
-
 </html>

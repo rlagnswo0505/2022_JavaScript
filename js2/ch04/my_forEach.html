@@ -16,15 +16,35 @@
             '4': 17,
             '5': 56,
             '6': 47,
-            'length': 7,
+            'length': 7,            
             'forEach': function(cb) {
                 for(let i=0; i<this.length; i++) {                    
                     cb(this[i], i);
                 }
             }
         }
+        let sum = 0;
+        function fnSum(item, idx, arr) {
+            sum += item;            
+        }
+        myArr.forEach(fnSum);
+        console.log(myArr.length);
+        console.log(myArr[0]);
+        console.log(myArr[1]);
+
+        console.log(`my_sum : ${sum}`);
+      
         
-       
+        
+
+
+
+
+
+
+
+/*
+
         console.log('----------');
         myArr.forEach(function(item, idx) {
             console.log(`arr[${idx}] : ${item}`);
@@ -45,7 +65,7 @@
             }
         });
         console.log(`홀수 전체 더함 : ${sum_odd}`);
-        
+        */
     </script>
 </body>
 </html>
