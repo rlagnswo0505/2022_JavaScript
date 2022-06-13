@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    td {
+      border: 2px solid #000;
+      padding: 10px;
+      text-align: center;
+    }
+
+    input[type="button"]:last-child {
+      background-color: #000;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+
+  </div>
+  <script>
+    // elt = element 줄인말
+    function elt(name, attr) {
+      const node = document.createElement(name);
+      if (attr) {
+        for (const item in attr) {
+          if (attr.hasOwnProperty(item)) {
+            node.setAttribute(item, attr[item]);
+          }
+        }
+      }
+      return node;
+    }
+    function createIconEditor(parent, nx, ny) {
+      //color input
+      const inputColor = elt('input', { type: 'color' });
+      parent.appendChild(inputColor);
+
+      // All Clear Button
+      const btnAllClear = elt('input', { type: 'button', value: 'All Clear', class: "clearBtn" });
+      parent.appendChild(btnAllClear);
+
+      // change Button
+      const btnColorChange = elt('input', { type: 'button', value: 'Change Color', class: 'changeBtn' });
+      parent.appendChild(btnColorChange);
+
+      //table
+      const table = elt('table');
+      parent.appendChild(table);
+      table.style.borderCollapse = 'collapse';
+      table.style.marginTop = '10px';
+      let count = 0;
+      for (let i = 0; i < nx; i++) {
+        const tr = elt('tr');
+        table.appendChild(tr);
+        for (let z = 0; z < ny; z++) {
+          count++;
+          const td = elt('td');
+          tr.appendChild(td);
+          td.append(count);
+          let colorVal = td.style.backgroundColor;
+          td.addEventListener('click', function (e) {
+            if (td.style.backgroundColor === '') {
+              td.style.backgroundColor = inputColor.value;
+            } else if (colorVal !== inputColor.value) {
+              td.style.backgroundColor = inputColor.value;
+            } else if (td.style.backgroundColor === inputColor.value) {
+              td.style.backgroundColor = '';
+            }
+          });
+        }
+      }
+    }
+
+    createIconEditor(document.body, 10, 10);
+
+    // 클릭했을때 그 부분 배경색 색칠하기
+    const colorPic = document.querySelector('input[type="color"]');
+    const tds = document.querySelectorAll('td');
+    const colorChange = document.querySelector('.changeBtn');
+    colorChange.addEventListener('click', function () {
+      tds.forEach(element => {
+        element.style.border = `2px solid ${colorPic.value}`;
+      });
+    });
+
+    const clearBtn = document.querySelector('.clearBtn');
+    clearBtn.addEventListener('click', () => {
+      tds.forEach(element => {
+        element.style.backgroundColor = '#fff';
+      });
+    });
+  </script>
+</body>
+
+</html>
