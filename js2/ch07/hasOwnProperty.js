@@ -20,7 +20,7 @@ console.log(obj2.hasOwnProperty('name'));
 console.log(obj2.hasOwnProperty('age'));
 obj2.addr = '제주도';
 console.log(obj2.hasOwnProperty('addr'));
-obj2.height = 182.2;
+// obj2.height = 182.2;
 console.log(Human.prototype.height);
 console.log(obj2.height);
 console.log(obj2.hasOwnProperty('height'));

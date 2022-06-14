@@ -63,20 +63,47 @@
           const td = elt('td');
           tr.appendChild(td);
           td.append(count);
-          let colorVal = td.style.backgroundColor;
+
+          let colorStr = '';
           td.addEventListener('click', function (e) {
-            if (td.style.backgroundColor === '') {
-              td.style.backgroundColor = inputColor.value;
-            } else if (colorVal !== inputColor.value) {
-              td.style.backgroundColor = inputColor.value;
-            } else if (td.style.backgroundColor === inputColor.value) {
-              td.style.backgroundColor = '';
+            if (e.target.style.backgroundColor === '' || colorStr !== inputColor.value) {
+              e.target.style.backgroundColor = inputColor.value;
+              colorStr = inputColor.value;
+            } else {
+              e.target.style.backgroundColor = '';
             }
           });
+
+          /*
+          td.addEventListener('click', function (e) {
+            if (e.target.style.backgroundColor === '') {
+              e.target.style.backgroundColor = inputColor.value;
+            } else {
+              const rgbToHex = convertRGBtoHex(e.target.style.backgroundColor);
+              if (inputColor.value === rgbToHex) {
+                e.target.style.backgroundColor = '';
+              } else {
+                e.target.style.backgroundColor = inputColor.value;
+              }
+            }
+          });
+          */
         }
       }
     }
 
+    // function convertRGBtoHex(rgb) {
+    //   if (rgb === '') {
+    //     return '';
+    //   }
+    //   const colors = rgb.substring(rgb.indexOf('(') + 1, rgb.lastIndexOf(')')).split(/,\s*/);
+    //   return '#' + colorToHex(colors[0]) + colorToHex(colors[1]) + colorToHex(colors[2]);
+    // }
+
+    // function colorToHex(color) {
+    //   var hexadecimal = parseInt(color, 10).toString(16);
+    //   return hexadecimal.length == 1 ? "0" + hexadecimal : hexadecimal;
+    // }
     createIconEditor(document.body, 10, 10);
 
     // 클릭했을때 그 부분 배경색 색칠하기
@@ -92,7 +119,8 @@
     const clearBtn = document.querySelector('.clearBtn');
     clearBtn.addEventListener('click', () => {
       tds.forEach(element => {
-        element.style.backgroundColor = '#fff';
+        element.style.backgroundColor = '';
+        element.style.border = '2px solid #000';
       });
     });
   </script>
