@@ -64,11 +64,22 @@
           tr.appendChild(td);
           td.append(count);
 
+          // 해당 방법은 클로져를 사용한 방법
           let colorStr = '';
           td.addEventListener('click', function (e) {
             if (e.target.style.backgroundColor === '' || colorStr !== inputColor.value) {
               e.target.style.backgroundColor = inputColor.value;
               colorStr = inputColor.value;
+            } else {
+              e.target.style.backgroundColor = '';
+            }
+          });
+
+          // 해당 방법은 e.target에 속성을 주고 해결
+          td.addEventListener('click', function (e) {
+            if (e.target.style.backgroundColor === '' || e.target.color16 !== inputColor.value) {
+              e.target.style.backgroundColor = inputColor.value;
+              e.target.color16 = inputColor.value;
             } else {
               e.target.style.backgroundColor = '';
             }
